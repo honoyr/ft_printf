@@ -71,7 +71,10 @@ int			type_cu(va_list arg, t_format *fl)
 	x = 0;
 	tmp = NULL;
 	n = va_arg(arg, wint_t);
-	tmp = ft_print_unic(n, fl);
+	if (MB_CUR_MAX > 1)
+		tmp = ft_print_unic(n, fl);
+	else
+		tmp = n;
 	s = type_help_uni(fl, tmp);
 	l = ft_strlen(s);
 	if (!n)
