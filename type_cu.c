@@ -70,19 +70,20 @@ int			type_cu(va_list arg, t_format *fl)
 
 	x = 0;
 	tmp = NULL;
-	n = va_arg(arg, wint_t);
 	if (MB_CUR_MAX > 1)
+	{
+		n = va_arg(arg, wint_t);
 		tmp = ft_print_unic(n, fl);
+	}
 	else
-		tmp = n;
+		return (type_c(arg, fl));
 	s = type_help_uni(fl, tmp);
 	l = ft_strlen(s);
 	if (!n)
 		l += 1;
 	fl->flags[2] != 0 ? write(1, s, l) : ft_width_pr(&x, fl->width - l, ' ');
 	fl->flags[2] == 0 ? write(1, s, l) : ft_width_pr(&x, fl->width - l, ' ');
-	if (s)
-		free(s);
+	free(s);
 	if (tmp)
 		free(tmp);
 	return (l + x);
