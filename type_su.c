@@ -100,16 +100,11 @@ int				type_su(va_list arg, t_format *fl)
 	dst = NULL;
 	src = NULL;
 	tmp = NULL;
-	if (MB_CUR_MAX > 1 && !ft_strequ(tmp, "(null)"))
-	{
-		src = va_arg(arg, wchar_t*);
-		if (src == NULL)
-			tmp = ft_strdup("(null)");
-		else
-			tmp = ft_strunicode(src, fl);
-	}
-	else
-		return (type_s(arg, fl));
+	src = va_arg(arg, wchar_t*);
+	if (src == NULL)
+		tmp = ft_strdup("(null)");
+	else if (!ft_strequ(tmp, "(null)"))
+		tmp = ft_strunicode(src, fl);
 	dst = type_help_su(fl, tmp, src);
 	l = ft_strlen(dst);
 	fl->flags[2] != 0 ? write(1, dst, l) : ft_width_pr(&x, fl->width - l, ' ');
