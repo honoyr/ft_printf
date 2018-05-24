@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int			count_nbr_u(unsigned long long n)
+static int					count_nbr_u(unsigned long long n)
 {
 	int						i;
 
@@ -22,7 +22,7 @@ int			count_nbr_u(unsigned long long n)
 	return (i);
 }
 
-char		*ft_itoa_u(t_llu n, int l, int ch)
+char						*ft_itoa_u(t_llu n, int l, int ch)
 {
 	int						i;
 	char					*res;
@@ -42,7 +42,7 @@ char		*ft_itoa_u(t_llu n, int l, int ch)
 	return (res);
 }
 
-int			type_u(va_list arg, t_format *fl)
+int							type_u(va_list arg, t_format *fl)
 {
 	int						l;
 	t_llu					n;

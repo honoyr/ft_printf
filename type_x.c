@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*ft_itoa_bx(t_llu n, int l, int ch, t_format *fl)
+static char		*ft_itoa_bx(t_llu n, int l, int ch, t_format *fl)
 {
 	int		i;
 	char	*res;

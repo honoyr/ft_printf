@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*ft_itoa_bp(size_t n, int l)
+static char			*ft_itoa_bp(size_t n, int l)
 {
 	int			i;
 	char		*res;
@@ -31,7 +31,7 @@ char			*ft_itoa_bp(size_t n, int l)
 	return (res);
 }
 
-int				type_p(va_list arg, t_format *fl)
+int					type_p(va_list arg, t_format *fl)
 {
 	int			l;
 	size_t		n;

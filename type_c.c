@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*type_help_c(t_format *fl, char *src)
+static char				*type_help_c(t_format *fl, char *src)
 {
 	char				*r;
 	char				*s1;
@@ -38,7 +38,7 @@ char			*type_help_c(t_format *fl, char *src)
 	return (r);
 }
 
-int				type_c(va_list arg, t_format *fl)
+int						type_c(va_list arg, t_format *fl)
 {
 	unsigned char		c;
 	char				*src;

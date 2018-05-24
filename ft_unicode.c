@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		ft_print_4bit(char *s, unsigned int v, t_format *fl)
+static void		ft_print_4bit(char *s, unsigned int v, t_format *fl)
 {
 	s[0] = (char)(240 | (v >> 18));
 	s[1] = (char)(128 | ((v >> 12) & 63));
@@ -21,7 +21,7 @@ void		ft_print_4bit(char *s, unsigned int v, t_format *fl)
 	fl->bait += 4;
 }
 
-void		ft_print_3bit(char *s, unsigned int v, t_format *fl)
+static void		ft_print_3bit(char *s, unsigned int v, t_format *fl)
 {
 	s[0] = (char)(224 | (v >> 12));
 	s[1] = (char)(128 | ((v >> 6) & 63));
@@ -29,14 +29,14 @@ void		ft_print_3bit(char *s, unsigned int v, t_format *fl)
 	fl->bait += 3;
 }
 
-void		ft_print_2bit(char *s, unsigned int v, t_format *fl)
+static void		ft_print_2bit(char *s, unsigned int v, t_format *fl)
 {
 	s[0] = (char)(192 | (v >> 6));
 	s[1] = (char)(128 | (v & 63));
 	fl->bait += 2;
 }
 
-char		*ft_print_unic(unsigned int n, t_format *fl)
+char			*ft_print_unic(unsigned int n, t_format *fl)
 {
 	char			*src;
 	unsigned int	v;

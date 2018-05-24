@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int				ft_precisin_su(t_format *fl, wchar_t *wsrc)
+static int			ft_precisin_su(t_format *fl, wchar_t *wsrc)
 {
 	int			bait;
 	int			pres;
@@ -32,7 +32,7 @@ int				ft_precisin_su(t_format *fl, wchar_t *wsrc)
 	return (bait);
 }
 
-char			*ft_stru(t_format *fl, char *src, wchar_t *wsrc)
+static char			*ft_stru(t_format *fl, char *src, wchar_t *wsrc)
 {
 	char		*r;
 	char		*s1;
@@ -60,7 +60,7 @@ char			*ft_stru(t_format *fl, char *src, wchar_t *wsrc)
 	return (r);
 }
 
-char			*type_help_su(t_format *fl, char *src, wchar_t *wsrc)
+static char			*type_help_su(t_format *fl, char *src, wchar_t *wsrc)
 {
 	char		*r;
 
@@ -74,7 +74,7 @@ char			*type_help_su(t_format *fl, char *src, wchar_t *wsrc)
 	return (r);
 }
 
-char			*ft_strunicode(wchar_t *src, t_format *fl)
+static char			*ft_strunicode(wchar_t *src, t_format *fl)
 {
 	char		*str;
 	char		*s1;
@@ -88,7 +88,7 @@ char			*ft_strunicode(wchar_t *src, t_format *fl)
 	return (str);
 }
 
-int				type_su(va_list arg, t_format *fl)
+int					type_su(va_list arg, t_format *fl)
 {
 	int			l;
 	wchar_t		*src;

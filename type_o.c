@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int				count_nbr_base(size_t n, int base)
+int					count_nbr_base(size_t n, int base)
 {
 	int	i;
 
@@ -22,13 +22,11 @@ int				count_nbr_base(size_t n, int base)
 	return (i);
 }
 
-char			*ft_itoa_b(t_llu n, int l, int ch, t_format *fl)
+static char			*ft_itoa_b(t_llu n, int l, int ch, t_format *fl)
 {
 	int		i;
 	char	*res;
-	char	*c;
 
-	c = "0123456789abcdef";
 	i = count_nbr_base(n, 8);
 	if (!fl->flags[0])
 		ch = 0;
@@ -40,7 +38,7 @@ char			*ft_itoa_b(t_llu n, int l, int ch, t_format *fl)
 	res[l] = 0;
 	while (l != 0)
 	{
-		res[--l] = c[n % 8];
+		res[--l] = BASESTR[n % 8];
 		n /= 8;
 	}
 	if (ch)
@@ -48,7 +46,7 @@ char			*ft_itoa_b(t_llu n, int l, int ch, t_format *fl)
 	return (res);
 }
 
-char			*type_help_o(t_format *fl, size_t n)
+static char			*type_help_o(t_format *fl, size_t n)
 {
 	char		*s;
 
@@ -60,7 +58,7 @@ char			*type_help_o(t_format *fl, size_t n)
 	return (s);
 }
 
-int				type_o(va_list arg, t_format *fl)
+int					type_o(va_list arg, t_format *fl)
 {
 	char		*s;
 	t_llu		n;

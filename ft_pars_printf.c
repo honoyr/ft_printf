@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int			ft_set_format(t_format *fl)
+int					ft_set_format(t_format *fl)
 {
 	ft_memset(fl->flags, 0, 5);
 	fl->width = -1;
@@ -29,7 +29,7 @@ int			ft_set_format(t_format *fl)
 	return (0);
 }
 
-void		ft_help_precision(const char *format, int *p, t_format *fl)
+static void			ft_help_precision(const char *format, int *p, t_format *fl)
 {
 	int		i;
 
@@ -41,13 +41,13 @@ void		ft_help_precision(const char *format, int *p, t_format *fl)
 	*p += i;
 }
 
-int			ft_set_type(const char *pos, t_format *fl, va_list *arg)
+static int			ft_set_type(const char *pos, t_format *fl, va_list *arg)
 {
 	int			i;
 	int			c;
 
 	i = 0;
-	if (ft_strchr("sSpdDioOuUxXcC", pos[i]))
+	if (ft_strchr(TYPE, pos[i]))
 	{
 		fl->type = pos[i];
 		c = pos[i];
@@ -60,7 +60,7 @@ int			ft_set_type(const char *pos, t_format *fl, va_list *arg)
 	}
 }
 
-int			ft_pars_printf(const char *format, int *p, va_list *arg)
+int					ft_pars_printf(const char *format, int *p, va_list *arg)
 {
 	t_format	fl;
 	int			i;
@@ -80,7 +80,7 @@ int			ft_pars_printf(const char *format, int *p, va_list *arg)
 			ft_help_precision(&format[i], &i, &fl);
 		if (ft_strchr("hljz", format[i]))
 			i += ft_set_mod(&format[i], &fl, &n);
-		if (!(ft_strchr("0123456789.-+ #hljz", format[i])))
+		if (!(ft_strchr(MOD, format[i])))
 		{
 			*p += i + 1;
 			return (ft_set_type(&format[i], &fl, arg));

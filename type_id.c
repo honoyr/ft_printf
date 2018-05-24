@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*ft_itoapf_m(size_t n, int l)
+static char			*ft_itoapf_m(size_t n, int l)
 {
 	char		*res;
 
@@ -29,7 +29,7 @@ char			*ft_itoapf_m(size_t n, int l)
 	return (res);
 }
 
-char			*ft_itoapf(long long int n, int l, int ch)
+static char			*ft_itoapf(long long int n, int l, int ch)
 {
 	int			i;
 	char		*res;
@@ -51,7 +51,7 @@ char			*ft_itoapf(long long int n, int l, int ch)
 	return (res);
 }
 
-int				type_i(va_list arg, t_format *fl)
+int					type_i(va_list arg, t_format *fl)
 {
 	int			l;
 	long long	n;

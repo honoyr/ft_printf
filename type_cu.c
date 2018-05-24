@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char		*type_str_uni(t_format *fl, char *src)
+static char			*type_str_uni(t_format *fl, char *src)
 {
 	char			*r;
 	char			*s1;
@@ -32,7 +32,7 @@ char		*type_str_uni(t_format *fl, char *src)
 	return (r);
 }
 
-char		*type_help_uni(t_format *fl, char *src)
+static char			*type_help_uni(t_format *fl, char *src)
 {
 	char			*r;
 	char			*s1;
@@ -60,7 +60,7 @@ char		*type_help_uni(t_format *fl, char *src)
 	return (r);
 }
 
-int			type_cu(va_list arg, t_format *fl)
+int					type_cu(va_list arg, t_format *fl)
 {
 	int				l;
 	int				x;

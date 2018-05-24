@@ -18,6 +18,8 @@
 # include <wchar.h>
 # include <locale.h>
 # define FLAG "#0 +-"
+# define MOD "0123456789.-+ #hljz"
+# define TYPE "sSpdDioOuUxXcC"
 # define WIDTH fl->width
 # define PRES fl->precision
 # define LENSTR (int)ft_strlen(src)
@@ -91,10 +93,6 @@ long long		data_mod(va_list arg, t_format *fl);
 
 char			*ft_strzero(int l);
 char			*ft_print_unic(unsigned int n, t_format *fl);
-void			ft_print_3bit(char *s, unsigned int v, t_format *fl);
-void			ft_print_4bit(char *s, unsigned int v, t_format *fl);
-char			*type_help_su(t_format *fl, char *src, wchar_t *wsrc);
-char			*type_help_uni(t_format *fl, char *src);
 int				ft_count_bait(unsigned int nbit);
 int				count_nbr_base(size_t n, int base);
 #endif

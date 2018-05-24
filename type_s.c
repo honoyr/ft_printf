@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char			*ft_strzero(int l)
+char				*ft_strzero(int l)
 {
 	char		*res;
 
@@ -29,7 +29,7 @@ char			*ft_strzero(int l)
 	return (res);
 }
 
-char			*type_help_s(t_format *fl, char *src)
+static char			*type_help_s(t_format *fl, char *src)
 {
 	char		*r;
 	char		*s1;
@@ -55,7 +55,7 @@ char			*type_help_s(t_format *fl, char *src)
 	return (r);
 }
 
-int				type_s(va_list arg, t_format *fl)
+int					type_s(va_list arg, t_format *fl)
 {
 	char		*src;
 	char		*dst;

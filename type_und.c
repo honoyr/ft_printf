@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-char		*type_help_und(t_format *fl, char s)
+static char		*type_help_und(t_format *fl, char s)
 {
 	char	*r;
 	char	*s1;
@@ -38,7 +38,7 @@ char		*type_help_und(t_format *fl, char s)
 	return (r);
 }
 
-int			type_und(t_format *fl)
+int				type_und(t_format *fl)
 {
 	int		l;
 	char	src;
