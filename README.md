@@ -11,3 +11,4 @@
 + manage the precision.
 + manage the flags hh, h, l, ll, j, et z.
 + [WIKI printf](https://en.wikipedia.org/wiki/Printf_format_string)
+[[]()](https://www.youtube.com/watch?v=q3hONNn4UwM)
