@@ -2,7 +2,7 @@
 
 ## About
 
-**ft_printf** - recodeed the C standard library function.
+**ft_printf** - re-coded the C standard library function.
 
 + manage the following conversions: sSpdDioOuUxXcC.
 + manage %%.
