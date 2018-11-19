@@ -12,5 +12,5 @@
 + manage the flags hh, h, l, ll, j, et z.
 + [WIKI printf](https://en.wikipedia.org/wiki/Printf_format_string)
 
-+ [How it's work <img width="1394" alt="screen shot 2018-11-19 at 3 05 58 pm" src="https://user-images.githubusercontent.com/33399226/48740541-afeb5b80-ec0c-11e8-9f22-44211fe253e3.png">
++ [How it's work ![ft_printf-min](https://user-images.githubusercontent.com/33399226/48742295-33a84680-ec13-11e8-82f8-fc6f0014605b.png)
 ](https://youtu.be/sCVdtYM5LTA)
